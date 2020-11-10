@@ -1,0 +1,9 @@
+{
+  "watch": ["src"],
+  "ignore": ["node_modules", "*.test.ts"],
+  "env": {
+    "DEBUG": "Web:*"
+  },
+  "ext": "ts tsx",
+  "exec": "ts-node --project tsconfig.development.json src"
+}

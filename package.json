@@ -1,0 +1,30 @@
+{
+  "name": "web-template",
+  "workspaces": [
+    "apps/*"
+  ],
+  "private": true,
+  "version": "0.0.0",
+  "description": "web app template",
+  "scripts": {
+    "frontend": "yarn workspace frontend",
+    "backend": "yarn workspace backend",
+    "proxy": "yarn workspace proxy",
+    "dev": "concurrently --kill-others \"cross-env PORT=9001 CHOKIDAR_USEPOLLING=true yarn frontend dev\" \"cross-env PORT=9002 yarn backend dev\" \"cross-env PORT=3000 yarn proxy dev\"",
+    "build": "concurrently --kill-others-on-fail \"yarn frontend build\" \"yarn backend build\" \"yarn proxy build\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onichandame/web-template.git"
+  },
+  "author": "onichandame",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/onichandame/web-template/issues"
+  },
+  "homepage": "https://github.com/onichandame/web-template#readme",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.2"
+  }
+}
